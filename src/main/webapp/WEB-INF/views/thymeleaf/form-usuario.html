@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ca80211b53.js" crossorigin="anonymous" charset="UTF-8"></script>
+
+    <title>Crear usuario</title>
+    <!-- Boostrap core css -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
+
+    <!-- custom style -->
+    <link rel="stylesheet" th:href="@{css/main.css}"/>
+    <link rel="stylesheet" th:href="@{/css/form-usuario.css}"/>
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg mx-4">
+        <div class="d-flex align-items-center bg-violet"> <!-- Div pegado a la izquierda -->
+            <a th:href="${usuario != null && usuario.tipoUsuario != null ? 'home-' + usuario.tipoUsuario : 'home'}" class="mx-2">
+                <img th:src="@{/imagenes/logo.png}" class="d-block w-100 bg-violet" alt=",,," style="height: 50px;width: 50px">
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse justify-content-end"> <!-- Div pegado a la derecha -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active p-2">
+                    <a th:href="${usuario != null && usuario.tipoUsuario != null ? 'home' + usuario.tipoUsuario : 'home'}" class="nav-link p-2 text-white">Inicio</a>
+                </li>
+
+                <li class="nav-item p-2">
+                    <a th:href="compania" class="nav-link p-2 text-white" href="#">Compañía</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a th:href="ayuda" class="nav-link p-2 text-white" href="#">Ayuda</a>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main class="main_registro">
+
+<div class="fondo-form">
+    <h1 th:if="${isEditForm}" class="titulo_registroConductor">Editar Datos Personales</h1>
+    <h1 th:unless="${isEditForm}" class="titulo_registroConductor">Registrarme</h1>
+
+    <form id="conductorForm" th:action="${isEditForm ? 'editar-usuario' : 'registrar-usuario'}" method="POST" th:object="${usuario}">
+        <section class="formulario">
+            <div class="columna">
+                <div>
+                    <label for="nombre" class="nombre fuente_formulario_registro">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" th:field="*{nombre}" th:value="${isEditForm ? usuario.getNombre() : ''}" >
+                    <span class="error" id="nombreError"></span>
+                </div>
+                <div>
+                    <label for="apellido" class="apellido fuente_formulario_registro">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" th:field="*{apellido}" th:value="${isEditForm ? usuario.getApellido() : ''}">
+                    <span class="error" id="apellidoError"></span>
+                </div>
+                <div >
+                    <label for="domicilio" class="domicilio fuente_formulario_registro">Domicilio</label>
+                    <input type="text" class="form-control" id="domicilio" name="domicilio" th:field="*{domicilio}" th:value="${isEditForm ? usuario.getDomicilio() : ''}" >
+                    <span class="error" id="domicilioError"></span>
+                </div>
+                <div>
+                    <label for="nroTelefono" class="telefono fuente_formulario_registro">Número de Teléfono</label>
+                    <input type="text" class="form-control" id="nroTelefono" name="nroTelefono" th:field="*{numeroDeTelefono}" th:value="${isEditForm ? usuario.getNumeroDeTelefono() : ''}" >
+                    <span class="error" id="nroTelefonoError"></span>
+                </div>
+                <div>
+                    <label for="numeroDeDni" class="dni fuente_formulario_registro">Número de DNI</label>
+                    <input type="number" class="form-control" id="numeroDeDni" name="numeroDeDni" th:field="*{numeroDeDni}" th:value="${isEditForm ? usuario.getNumeroDeDni() : ''}" >
+                    <span class="error" id="numeroDeDniError"></span>
+                </div>
+            </div>
+            <div class="columna">
+                <div>
+                    <label for="nombreUsuario" class="nombreUsuario fuente_formulario_registro">Nombre de Usuario</label>
+                    <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" th:field="*{nombreUsuario}" th:value="${isEditForm ? usuario.getNombreUsuario() : ''}" th:readonly="${isEditForm}" >
+                    <span class="error" id="nombreUsuarioError"></span>
+                    <span class="error" th:if="${mensajeError != null}"><p th:text="${mensajeError}"></p></span>
+
+                </div>
+                <div>
+                    <label for="email" class="email fuente_formulario_registro">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" th:field="*{email}" th:value="${isEditForm ? usuario.getEmail() : ''}" th:readonly="${isEditForm}" >
+                    <span class="error" id="emailError"></span>
+                    <span class="error" th:if="${mensajeError != null}"><p th:text="${mensajeError}"></p></span>
+                </div>
+                <div>
+                    <label for="password" class="password fuente_formulario_registro">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password" th:field="*{password}" th:value="${isEditForm ? usuario.getPassword() : ''}" >
+                    <span class="error" id="passwordError"></span>
+                </div>
+                <div >
+                    <label for="confirmarPassword" class="confirmarPassword fuente_formulario_registro">Confirmar Contraseña</label>
+                    <input type="password" class="form-control" id="confirmarPassword" name="confirmarPassword"  th:value="${isEditForm ? usuario.getPassword() : ''}" th:readonly="${isEditForm}" >
+                    <span class="error" id="confirmarPasswordError"></span>
+                </div>
+                <div>
+                    <label for="tipoUsuario">Tipo de Usuario:</label>
+                    <select id="tipoUsuario" name="tipoUsuario" class="form-control" th:field="*{tipoUsuario}"  th:disabled="${isEditForm}">
+                        <option th:if="${usuario.getTipoUsuario() == null}" value="" th:text="'Seleccione un tipo de usuario'"></option>
+                        <option th:each="tipo : ${T(com.tallerwebi.dominio.enums.TipoUsuario).values()}"
+                                th:value="${tipo}"
+                                th:selected="${usuario.getTipoUsuario() != null and tipo.name() == usuario.getTipoUsuario().name()}"
+                                th:text="${tipo}">
+                        </option>
+                    </select>
+                    <span class="error" id="tipoUsuarioError"></span>
+                </div>
+            </div>
+        </section>
+        <section class="botones">
+            <a th:if="${isEditForm}" ><button th:href="perfil" id="boton_cancelar_edit" type="button" class="btn-secundario">Cancelar</button></a>
+            <a th:unless="${isEditForm}" ><button th:href="home" id="boton_cancelar_ingresar" type="button" class="btn-secundario">Cancelar</button></a>
+
+            <button th:if="${isEditForm}" type="submit"  id="boton_editar_usuario" class="btn-principal">Editar</button>
+            <button th:unless="${isEditForm}" type="submit" id="boton_reg_usuario" class="btn-principal">Registrar</button>
+        </section>
+
+
+    </form>
+
+</div>
+
+</main>
+<footer>
+
+</footer>
+</body>
+<script th:src="@{/js/form-usuario.js}" charset="UTF-8"></script>
+</html>

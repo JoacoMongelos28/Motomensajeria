@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <script src="https://kit.fontawesome.com/ca80211b53.js" crossorigin="anonymous" charset="UTF-8"></script>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
+
+    <!-- custom style -->
+    <link rel="stylesheet" th:href="@{css/main.css}"/>
+    <link rel="stylesheet" th:href="@{css/login.css}"/>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg mx-4">
+        <div class="d-flex align-items-center bg-violet"> <!-- Div pegado a la izquierda -->
+            <a th:href="home" class="mx-2">
+                <img th:src="@{/imagenes/logo.png}" class="d-block w-100 bg-violet" alt=",,," style="height: 50px;width: 50px">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end"> <!-- Div pegado a la derecha -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active  p-2">
+                    <a th:href="home" class="nav-link p-2 text-white" href="#">Inicio</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a th:href="compania" class="nav-link p-2 text-white" href="#">Compañía</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a th:href="ayuda" class="nav-link p-2 text-white" href="#">Ayuda</a>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="fondo-form">
+        <div class="container-form-login">
+            <h1 style="text-align: center" class="titulo-login">Iniciar Sesión</h1>
+            <form id="loginForm" action="#" th:action="@{/validar-login}" method="POST" th:object="${datosLogin}">
+                <div>
+                    <label style="color: white" for="usuario">Usuario:</label>
+                    <input type="text" class="form-control" id="usuario" name="usuario" th:field="*{usuario}">
+                    <div th:if="${error}">
+                        <label th:text="${error}" class="error"></label>
+                    </div>
+                </div>
+                <div>
+                    <label style="color: white" for="password" class="label-form">Contraseña:</label>
+                    <input type="password" class="form-control" id="password" name="password" th:field="*{password}">
+                    <div th:if="${error}">
+                        <label th:text="${error}" class="error"></label>
+                    </div>
+                </div>
+
+                <section class="sub_columna">
+                    <div>
+                        <button type="submit" class="btn-principal" id="ingresar">Ingresar</button>
+                    </div>
+                    <div>
+                        <a th:href="nuevo-usuario">
+                            <button type="button" class="btn-secundario" id="registrarse">Registrarse</button>
+                        </a>
+                    </div>
+                </section>
+            </form>
+
+        </div>
+    </div>
+</main>
+</body>
+<script th:src="@{/js/login.js}" charset="UTF-8"></script>
+</html>

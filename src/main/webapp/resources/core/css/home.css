@@ -1,0 +1,34 @@
+main{
+    display: flex;
+    flex-direction: row;
+}
+.texto-home{
+    color:white;
+}
+#img-auto{
+    height: 100%;
+    width: 100%;
+}
+.cont-imagen-auto{
+    height: 38rem;
+    width: 50%;
+}
+.cont-texto-home{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

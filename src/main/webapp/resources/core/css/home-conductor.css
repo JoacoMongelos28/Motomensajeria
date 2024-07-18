@@ -1,0 +1,146 @@
+.homeCliente_main{
+    display:flex;
+    flex-direction: column;
+    gap:2em;
+    align-items: center;
+}
+
+.fondo-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.fondo-form-filtro{
+    align-self: center;
+    border-radius: 50px;
+    align-items: center;
+    padding:3% 5% 3% 5%;
+    background: rgba(10, 10, 10, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 4px 8px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+}
+.tam-card-filtro {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.tam-no-veh{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.container-home-conductor{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-filtro{
+    margin-bottom: 4%;
+}
+.cont-img-auto{
+    width: 50%;
+}
+.img-no-auto{
+    height: 100%;
+    width: 100%;
+}
+.isPenalizado{
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 30px;
+    background-color: black;
+    border-radius: 30px;
+    padding: 2%;
+}
+
+.pagarMulta{
+    align-content: center;
+    text-align: center;
+}
+.pagarMulta p{
+    align-content: center;
+    text-align: center;
+}
+.imgPenalizado{
+    height: 200px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.info-viaje{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4em;
+}
+.cont-direcciones{
+    width: 50%;
+}
+.cont-precio{
+    width: 50%;
+}
+
+.formFiltro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap:30px;
+}
+
+#filtrado{
+    background-color: white;
+}
+
+#filtro-distancia{
+    width: 300px;
+    padding: 0 3%;
+    background-color: #36054E;
+    color:white;
+    height: auto;
+    border-radius: 50px;
+    text-align: center;
+}
+
+
+.label-filtro {
+    color:purple;
+}
+
+.contenedor-botones{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.btn-principal{
+    width: 100%;
+}
+#btn-penalizacion{
+    width: 40%;
+}
+#btn-noveh{
+    width: 40%;
+}
+.btn-secundario{
+    width: auto;
+}
+
+

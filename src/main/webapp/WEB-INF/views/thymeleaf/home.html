@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://kit.fontawesome.com/ca80211b53.js" crossorigin="anonymous" charset="UTF-8"></script>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
+  <link rel="stylesheet" th:href="@{css/main.css}"/>
+  <link rel="stylesheet" th:href="@{css/home.css}"/>
+  <title>Home</title>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg mx-4">
+    <div class="d-flex align-items-center bg-violet"> <!-- Div pegado a la izquierda -->
+      <a th:href="home" class="mx-2">
+        <img th:src="@{/imagenes/logo.png}" class="d-block w-100 bg-violet" alt=",,," style="height: 50px;width: 50px">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active  p-2">
+          <a th:href="home" class="nav-link p-2 text-white" href="#">Inicio</a>
+        </li>
+        <li class="nav-item p-2">
+          <a th:href="compania" class="nav-link p-2 text-white" href="#">Compañía</a>
+        </li>
+        <li class="nav-item p-2">
+          <a th:href="ayuda" class="nav-link p-2 text-white" href="#">Ayuda</a>
+        </li>
+      </ul>
+      <a th:href="@{login}" class="btn-principal">Ingresar</a>
+    </div>
+  </nav>
+</header>
+<main>
+          <div class="cont-texto-home">
+            <h2 class="texto-home">¡Tus paquetes a tiempo siempre!</h2>
+            <h2 class="texto-home">Te ofrecemos envíos en el acto.</h2>
+            <p class="texto-home">Confía en nosotros.</p>
+          </div>
+          <div class="cont-imagen-auto">
+            <img th:src="@{/imagenes/auto-home.svg}" id="img-auto" alt="Imagen de Auto">
+          </div>
+  <div id="confirmPopup" class="modal-overlay">
+    <div class="fondo-form">
+      <p>Usuario creado correctamente, por favor, inicie sesión.</p>
+        <div class="d-flex justify-content-center">
+          <a th:href="@{login}" class="btn-principal" id="confirmNo">Aceptar</a>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  // Función para mostrar el popup de confirmación
+  function openPopup() {
+    document.getElementById('confirmPopup').style.display = 'flex';
+  }
+
+  // Función para cerrar el popup de confirmación
+  function closePopup() {
+    document.getElementById('confirmPopup').style.display = 'none';
+  }
+
+  // Event listener para el enlace de "Cerrar Cuenta"
+  document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('registroExitoso') === 'true') {
+      openPopup();
+    }else{
+      closePopup();
+    }
+  });
+
+
+  // Event listener para el botón "No" dentro del popup de confirmación
+  document.getElementById('confirmNo').addEventListener('click', function () {
+    closePopup(); // Cerrar el popup si se selecciona "No"
+  });
+</script>
+<script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}" charset="UTF-8"></script>
+</body>
+</html>

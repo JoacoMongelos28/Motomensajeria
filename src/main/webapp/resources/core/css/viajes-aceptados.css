@@ -1,0 +1,232 @@
+.cont-precio {
+    margin-top: 0rem;
+}
+.boton-aceptar:hover {
+    background-color: #eee;
+}
+
+.boton-volver:hover {
+    background-color: #eee;
+}
+
+.boton-aceptar {
+    background-color: forestgreen;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.boton-volver {
+    background-color: #ed9000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+.titulo-solicitud{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 25px;
+    margin-top: 40px;
+    color: white;
+}
+
+.contenedor-viaje{
+    background-color: lightgrey;
+}
+
+.titulo-viajes{
+    color: white;
+}
+
+.contenedor-datos-viajes-aceptados{
+    font-size: 18px;
+    background-color: lightgrey;
+}
+
+.contenedor-boton-cancelar{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-viaje{
+    background-image: url("imagenes/obelisco.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.contenedor-datos-viaje {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px 0;
+    gap: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.contenedor-datos-viaje > div {
+    flex: 1;
+    max-width: 45%;
+}
+
+
+
+.boton-verde, .boton-rojo {
+    background-color: #008cba;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.boton-rojo {
+    background-color: #dc3545;
+}
+
+.terminado, .cancelado {
+    background-color: #008cba;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.cancelado {
+    background-color: #dc3545;
+}
+
+.card-text {
+    color: #4f4f4f;
+}
+span{
+    color:black;
+    }
+
+p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.titulo-solicitud {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.2;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+.card {
+    border-radius: 30px;
+    padding: 2%;
+    background-color: lightgrey;
+}
+
+.contenedor-viaje {
+    margin: 15px 0;
+}
+
+.boton-rojo:hover, .boton-verde:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+    color: black;
+    background-color: coral;
+}
+
+.boton-verde:hover {
+    background-color: aqua;
+}
+
+.viajes-proceso-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 2%;
+}
+
+.imagen-viaje-proceso {
+    flex: 1;
+    max-width: 50%;
+    background-image: url("imagenes/obelisco.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.contenedor-imagen-viaje-proceso {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px 0;
+    gap: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#map{
+    height: 500px;
+    width: 100%;
+}
+.main-viajes-proceso{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fondo-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 16em;
+    gap: 50px;
+    width: 75%;
+}
+span{
+    color:white;
+}
+
+.contenedor-botones {
+    padding:3% 5% 3% 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 4px 8px rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+    border-radius: 50px;
+}
+.contenedor-botones i{
+    color:white;
+    font-size: 60px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://kit.fontawesome.com/ca80211b53.js" crossorigin="anonymous" charset="UTF-8"></script>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
+  <link rel="stylesheet" th:href="@{css/main.css}"/>
+  <link rel="stylesheet" th:href="@{css/home-cliente.css}"/>
+  <title>Home</title>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg mx-4">
+    <div class="d-flex align-items-center bg-violet"> <!-- Div pegado a la izquierda -->
+      <a th:href="home-cliente"  class="mx-2">
+        <img th:src="@{/imagenes/logo.png}" class="d-block w-100 bg-violet" alt=",,," style="height: 50px;width: 50px">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active  p-2">
+          <a th:href="home-cliente" class="nav-link p-2 text-white" href="#">Inicio</a>
+        </li>
+        <li class="nav-item p-2">
+          <a th:href="compania" class="nav-link p-2 text-white" href="#">Compañía</a>
+        </li>
+        <li class="nav-item p-2">
+          <a th:href="ayuda" class="nav-link p-2 text-white" href="#">Ayuda</a>
+        </li>
+        <li class="nav-item p-2">
+          <a th:href="envios-en-proceso" class="nav-link p-2 text-white" id="envios-en-proceso">Envios en Proceso</a>
+        </li>
+        <li class="nav-item p-2">
+          <a th:href="historial-envios" class="nav-link p-2 text-white" href="#" id="historial-envios">Historial de Envios</a>
+        </li>
+      </ul>
+      <a th:href="perfil" class="btn mx-2" style="border:none;">
+        <div class="container d-flex justify-content-center align-items-center"  th:if="${cliente.getImagenPerfil() != null}" style="border: none">
+          <img alt="img" class="d-block rounded-circle" th:src="'data:image/jpg;charset=utf-8;base64,' + ${cliente.getImageDataBase64()}" style=" width: 40px; height: 40px;"/>
+        </div>
+        <div th:if="${cliente.getImagenPerfil() == null}">
+          <img th:src="@{/imagenes/user.png}" alt=",,," style="height: 20px;width: 20px">
+        </div>
+      </a>
+      <a th:href="@{cerrar-sesion}">
+        <i class="fa-solid fa-arrow-right-from-bracket" style=" border-radius:25px; padding:11px; background-color: white; color: #370a37; transition: color 0.3s;" onmouseover="this.style.color='white';this.style.backgroundColor='transparent';this.style.borderColor='white';this.style.border='1px solid white'" onmouseout="this.style.color='#370a37'; this.style.backgroundColor='white'" ></i>      </a>
+    </div>
+  </nav>
+</header>
+<main class="homeCliente_main">
+  <section class="titulos">
+    <h1 class="text-center h1-home">¡Bienvenido <span th:text="${cliente.nombre}"></span>!</h1>
+    <h5>¿Que vas a hacer hoy?</h5>
+  </section>
+  <a th:href="@{form-viaje}" class="crearEnvio">
+    <i class="fa-solid fa-square-plus"></i>
+    <p>Crear Envío</p>
+  </a>
+
+  <div th:if="${hayViajesCancelados}">
+    <div id="viajeCanceladoModal" class="modal-overlay show">
+      <div class="fondo-form">
+        <div th:each="viaje : ${viajes}">
+          <h3>Su viaje con destino a <span th:text="${viaje.getDomicilioDeLlegada()}"></span> ha sido rechazado</h3>
+          <p>¿Desea volver a realizar el paquete con los mismos datos?</p>
+          <div class="modal-footer-viaje">
+            <a th:href="@{/duplicarViajeCancelado(idViaje=${viaje.getId()})}"><button class="btn-principal">Aceptar</button></a>
+            <a th:href="@{/noDuplicarViaje(idViaje=${viaje.getId()})}"><button class="btn-secundario">Rechazar</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="acordeon">
+    <h2>¿Necesitas Ayuda?</h2>
+    <article class="item_acordeon">
+      <div class="pregunta_acordeon">
+        <p>¿Cómo funcionan nuestros envíos?</p>
+        <i class="fa-solid fa-sort-down"></i>
+      </div>
+      <div class="respuesta_acordeon">
+        <p>Nuestros envíos funcionan de manera rápida y eficiente. Simplemente ingresas la dirección de recogida y entrega en nuestra aplicación, y uno de nuestros conductores recogerá tu paquete en minutos. Puedes seguir el progreso del envío en tiempo real a través de la app y recibirás notificaciones en cada etapa del proceso.</p>
+      </div>
+    </article>
+    <article class="item_acordeon">
+      <div class="pregunta_acordeon">
+        <p>¿Qué pasa cuando cancelo un envío?</p>
+        <i class="fa-solid fa-sort-down"></i>
+      </div>
+      <div class="respuesta_acordeon">
+        <p>Si necesitas cancelar un envío, puedes hacerlo directamente desde la aplicación antes de que el conductor recoja el paquete. En este caso, no se te cobrará ningún cargo. Si el conductor ya ha recogido el paquete, se aplicará una tarifa de cancelación mínima para compensar el tiempo y el esfuerzo del conductor.</p>
+      </div>
+    </article>
+    <article class="item_acordeon">
+      <div class="pregunta_acordeon">
+        <p>¿Por qué podría estar demorando mi envío?</p>
+        <i class="fa-solid fa-sort-down"></i>
+      </div>
+      <div class="respuesta_acordeon">
+        <p>Las demoras en los envíos pueden deberse a varios factores, como tráfico intenso, condiciones climáticas adversas o problemas imprevistos en el punto de recogida o entrega. Te recomendamos seguir el envío en tiempo real a través de nuestra aplicación y contactar a soporte si experimentas una demora significativa.</p>
+      </div>
+    </article>
+  </section>
+
+</main>
+<script th:src="@{/js/home-cliente.js}" charset="UTF-8"></script>
+<script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}" charset="UTF-8"></script>
+</body>
+</html>

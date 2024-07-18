@@ -1,0 +1,52 @@
+main {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido */
+    justify-content: center; /* Alinea horizontalmente el contenido */
+    height: 89vh;
+}
+.fondo-form{
+    width: 35%;
+    height: 75%;
+}
+.container-form-login{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.titulo-login {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 5%;
+}
+.sub_columna{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    transition: background-color 0.3s;
+
+}
+.sub_columna div{
+    padding:2%;
+}
+.sub_columna a{
+    color:white;
+}
+.sub_columna a:hover{
+    color:violet;
+}
+.label-form{
+    margin-top: 5%;
+}
+
+.btn-principal{
+    width: 10em;
+}
+
+.btn-secundario{
+    width: 10em;
+}

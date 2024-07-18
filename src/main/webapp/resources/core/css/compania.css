@@ -1,0 +1,31 @@
+
+.ayuda-contenedor{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.ayuda-fila{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+.ayuda-foto{
+   width: 50%;
+    height: auto;
+    border-radius: 40px;
+}
+
+.ayuda-foto imagen{
+
+    border-radius: 40px;
+}
+.ayuda-texto{
+    width: 50%;
+    height: auto;
+
+}
+.fondo-form {
+    padding: 20px;
+    height: 100%;
+}
+
