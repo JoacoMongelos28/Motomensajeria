@@ -54,7 +54,7 @@ public class ClienteControladorTest {
         when(viajeServicioMock.obtenerViajesCanceladosDelCliente(idUsuario)).thenReturn(viajesCanceladosMock);
 
         // Ejecución
-        ModelAndView modelAndView = clienteControlador.mostrarHomeCliente(sessionMock);
+        ModelAndView modelAndView = clienteControlador.mostrarHomeCliente(sessionMock, "");
 
         // Verificación
         assertThat(modelAndView.getViewName(), equalTo("home-cliente"));

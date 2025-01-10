@@ -176,3 +176,52 @@ a:hover{
     width: 30%;
     text-align: center;
 }
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 50px 30px;
+    background-color: #21212150;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 1.5s ease;
+}
+
+.popup.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup-content h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.popup-content p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.contenedor-ver-envios {
+    margin-top: 25px;
+}
+
+.ver-envios-txt {
+    background-color: white;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.ver-envios-txt:hover {
+    background-color: #4e4e4e;
+}

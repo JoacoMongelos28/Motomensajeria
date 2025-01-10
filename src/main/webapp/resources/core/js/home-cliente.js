@@ -20,3 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.add('show');
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    let estaPagado = document.getElementById("pago").value;
+
+    if (estaPagado) {
+        const popup = document.getElementById("popup");
+        popup.classList.add("show");
+    }
+});
