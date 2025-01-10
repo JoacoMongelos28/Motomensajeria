@@ -18,12 +18,12 @@ import org.json.JSONObject;
 public class MercadoPagoServicioImpl implements MercadoPagoServicio {
 
     static {
-        MercadoPagoConfig.setAccessToken("APP_USR-6516945332441912-062213-33e68d63ba4f0fdd7ffb8678d2be0fa4-1867816013");
+        MercadoPagoConfig.setAccessToken("APP_USR-705806417372706-011002-1fe4d4af65b4f79f238b03a2c2755cf6-2201985025");
     }
 
     @Override
     public String pagarViajeMp(Double precioDelViaje) throws IOException {
-        String apiKey = "APP_USR-6516945332441912-062213-33e68d63ba4f0fdd7ffb8678d2be0fa4-1867816013";
+        String apiKey = "APP_USR-705806417372706-011002-1fe4d4af65b4f79f238b03a2c2755cf6-2201985025";
         URL url = new URL("https://api.mercadopago.com/checkout/preferences");
 
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -71,7 +71,7 @@ public class MercadoPagoServicioImpl implements MercadoPagoServicio {
     @Override
     public String pagarPenalizacionMp(Double montoPenalizacion) throws IOException {
         // Define la API Key y Endpoint de Mercado Pago
-        String apiKey = "APP_USR-6516945332441912-062213-33e68d63ba4f0fdd7ffb8678d2be0fa4-1867816013";
+        String apiKey = "APP_USR-705806417372706-011002-1fe4d4af65b4f79f238b03a2c2755cf6-2201985025";
 
         URL url = new URL("https://api.mercadopago.com/checkout/preferences");
 

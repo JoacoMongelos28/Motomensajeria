@@ -30,8 +30,9 @@ Technologies:<br>
 >5. Open Web at http://localhost:8080/home
 >6.	Register as a Customer and create a shipment
 >7.	When paying with Mercado Pago, log in with the following username and password.<br><br>
->User: TESTUSER347168003<br>
->Password: 18DEE38D#5c06#4ffc#<br><br>
+>User: TESTUSER2053005099<br>
+>Password: ADLMgFx7eE<br>
+>Verification code: 810057<br><br>
 >8.	Register as a Driver and accept the shipment created
 
 <br>
