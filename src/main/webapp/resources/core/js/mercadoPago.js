@@ -16,7 +16,7 @@ function generarPreferencia(precioTotal) {
     }).done(function(response) {
         console.log("Respuesta del servidor:", response);
 
-        const mp = new MercadoPago('APP_USR-3efd2cac-65f7-475c-8fb6-3beb5bdda103', {
+        const mp = new MercadoPago('APP_USR-920dcc73-83a3-4740-8525-5ee09134e9cd', {
             locale: 'es-AR'
         });
 
@@ -64,7 +64,7 @@ function generarPreferenciaPenalizacion(montoPenalizacion) {
     }).done(function(response) {
         console.log("Respuesta del servidor:", response);
 
-        const mp = new MercadoPago('APP_USR-3efd2cac-65f7-475c-8fb6-3beb5bdda103', {
+        const mp = new MercadoPago('APP_USR-920dcc73-83a3-4740-8525-5ee09134e9cd', {
             locale: 'es-AR'
         });
 
