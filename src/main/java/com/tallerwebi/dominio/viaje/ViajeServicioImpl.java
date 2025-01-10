@@ -293,7 +293,7 @@ public class ViajeServicioImpl implements ViajeServicio {
         List<Viaje> historialDeEnvios = new ArrayList<>();
 
         for(Viaje viaje : viajesObtenidos){
-            if(!viaje.getEstado().equals(TipoEstado.PENDIENTE) && viaje.getEnviadoNuevamente() != null && !viaje.getEnviadoNuevamente()){
+            if(viaje.getEstado().equals(TipoEstado.TERMINADO) || viaje.getEstado().equals(TipoEstado.CANCELADO)){
                 historialDeEnvios.add(viaje);
             }
         }
