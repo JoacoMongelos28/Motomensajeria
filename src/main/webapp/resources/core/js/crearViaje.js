@@ -4,17 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
     var form = document.getElementById('viajeForm');
     var botonCrear = document.getElementById('boton_crear_viaje');
 
-    botonCrear.addEventListener('click', function(event) {
-        if (!validarFormulario()) {
-            event.preventDefault(); // Evita que se envíe el formulario si hay errores
-        }
-    });
+    if (botonCrear) {
+        botonCrear.addEventListener('click', function(event) {
+            if (!validarFormulario()) {
+                event.preventDefault(); // Evita que se envíe el formulario si hay errores
+            }
+        });
+    }
 
-    form.addEventListener('submit', function(event) {
-        if (!validarFormulario()) {
-            event.preventDefault(); // Evita que se envíe el formulario si hay errores
-        }
-    });
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            if (!validarFormulario()) {
+                event.preventDefault(); // Evita que se envíe el formulario si hay errores
+            }
+        });
+    }
 
     function validarFormulario() {
         // Reiniciar mensajes de error

@@ -32,27 +32,31 @@ public class ClienteControlador {
     }
 
     @RequestMapping("/home-cliente")
-    public ModelAndView mostrarHomeCliente(HttpSession session) throws ClienteNoEncontradoException {
+    public ModelAndView mostrarHomeCliente(HttpSession session, @RequestParam(value = "payment", required = false) String payment) throws ClienteNoEncontradoException {
         ModelMap model = new ModelMap();
+
+        if ("success".equals(payment)) {
+            model.put("pagado", true);
+        }
+
         Cliente cliente;
         try{
-             cliente = clienteServicio.obtenerClientePorId((Integer) session.getAttribute("IDUSUARIO"));
+            cliente = clienteServicio.obtenerClientePorId((Integer) session.getAttribute("IDUSUARIO"));
         }catch (UsuarioNoEncontradoException e){
             model.put("mensajeError", e.getMessage() + " Por favor, vuelva a intentarlo.");
             return new ModelAndView("redirect:/*", model);
         }
-            List<Viaje> viajesCancelados = this.viajeServicio.obtenerViajesCanceladosDelCliente(cliente.getId());
+        List<Viaje> viajesCancelados = this.viajeServicio.obtenerViajesCanceladosDelCliente(cliente.getId());
 
-            if(!viajesCancelados.isEmpty()) {
-                model.put("hayViajesCancelados", true);
-                model.put("viajes", viajesCancelados);
-            }
+        if(!viajesCancelados.isEmpty()) {
+            model.put("hayViajesCancelados", true);
+            model.put("viajes", viajesCancelados);
+        }
 
-            model.put("cliente", cliente);
-            String viewName = "home-cliente";
-            this.reiniciarVariables(session);
-            return new ModelAndView(viewName, model);
-
+        model.put("cliente", cliente);
+        String viewName = "home-cliente";
+        this.reiniciarVariables(session);
+        return new ModelAndView(viewName, model);
     }
 
     public void reiniciarVariables(HttpSession session){
