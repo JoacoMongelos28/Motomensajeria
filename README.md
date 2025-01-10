@@ -21,19 +21,20 @@ Technologies:<br>
 >Steps for the operation of the project:
 >1.	Clone Repository: git clone https://github.com/JoacoMongelos28/Motomensajeria.git
 >2.	Create Database in MYSQL: CREATE DATABASE motomensajeria;
->3.	Synchronize Hibernate with your Database. Go to src/main/java/config/HibernateConfig
+>3. Open application and integrate Java SDK 11 if it asks you
+>4.	Synchronize Hibernate with your Database. Go to src/main/java/config/HibernateConfig
 ><br><br>dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");   --> Configure according to the drivers of your Database<br>
 >dataSource.setUrl("jdbc:mysql://localhost:3306/motomensajeria");  --> Configure according to your Database<br>
 >dataSource.setUsername("YOUR_USERNAME");<br>
 >dataSource.setPassword("YOUR_PASSWORD");<br><br>
->4.	Start the project with Jetty:Run: Go to the "m" of Maven in the right bar --> Open Spring Web MVC --> Plugins --> Jetty --> Jetty:Run
->5. Open Web at http://localhost:8080/home
->6.	Register as a Customer and create a shipment
->7.	When paying with Mercado Pago, log in with the following username and password.<br><br>
+>5.	Start the project with Jetty:Run: Go to the "m" of Maven in the right bar --> Open Spring Web MVC --> Plugins --> Jetty --> Jetty:Run
+>6. Open Web at http://localhost:8080/home
+>7.	Register as a Customer and create a shipment
+>8.	When paying with Mercado Pago, log in with the following username and password.<br><br>
 >User: TESTUSER2053005099<br>
->Password: ADLMgFx7eE<br>
+>Password: FC981613#be14#4f1f#<br>
 >Verification code: 810057<br><br>
->8.	Register as a Driver and accept the shipment created
+>9.	Register as a Driver and accept the shipment created
 
 <br>
 

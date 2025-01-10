@@ -91,9 +91,14 @@ public class MercadoPagoServicioImpl implements MercadoPagoServicio {
         item.put("currency_id", "ARS");
         item.put("unit_price", montoPenalizacion);
 
+        // Configura las URLs de retorno
+        JSONObject backUrls = new JSONObject();
+        backUrls.put("success", "http://localhost:8080/home-conductor?payment=success"); // Redirección en caso de éxito
+
         JSONObject jsonBody = new JSONObject();
         jsonBody.put("items", new JSONObject[]{item});
-
+        jsonBody.put("back_urls", backUrls);
+        jsonBody.put("auto_return", "approved"); // Redirección automática en caso de éxito
 
         // Envia la solicitud a Mercado Pago
         try (OutputStream os = con.getOutputStream()) {
