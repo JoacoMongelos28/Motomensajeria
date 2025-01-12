@@ -13,7 +13,7 @@ Technologies:<br>
 > Prerequisites:<br>
 > • MYSQL<br>
 > • Java SDK 11<br>
-> • Intellij IDEA (Opcional)
+> • Intellij IDEA (Optional)
 
 <br>
 
@@ -39,4 +39,4 @@ Technologies:<br>
 <br>
 
 > [!TIP]
-> ¡Disfruta la Web probando las funcionalidades que desees!
+> Enjoy the Web by testing the features you want!
