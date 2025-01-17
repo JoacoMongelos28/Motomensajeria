@@ -3,11 +3,12 @@
 The Motomesajería project aims to develop an efficient and modern solution for the fast messaging service. This system is designed to connect customers with drivers who use various means of transportation, such as motorcycles, cars and others, optimizing the management of orders, routes and delivery times. In an environment where speed and reliability are essential, Motomesajería seeks to be a key tool for individuals and companies that require urgent or scheduled shipments. The platform combines features such as real-time geolocation, integrated payments and a notification system, ensuring a seamless experience for all parties involved.<br><br>
 
 Technologies:<br>
-•	Testing: Mockito<br>
+• Tools: Maven<br>
+•	Frameworks: Thymeleaf | Hibernate<br>
 •	Frontend: HTML5 | CSS3 | Javascript<br>
-•	Backend: Spring Boot | Java | Javascript | MYSQL<br>
-
-<br>
+•	Backend: Spring Boot | Java | Javascript | MySQL<br>
+•	API: Mercado Pago API | Google Maps API | Servlet API <br>
+•	Testing: Mockito | Spring Test Hamcrest | JUnit | Playwright<br><br>
 
 > [!NOTE]
 > Prerequisites:<br>
@@ -20,7 +21,7 @@ Technologies:<br>
 > [!IMPORTANT]
 >Steps for the operation of the project:
 >1.	Clone Repository: git clone https://github.com/JoacoMongelos28/Motomensajeria.git
->2.	Create Database in MYSQL: CREATE DATABASE motomensajeria;
+>2.	Create Database in MySQL: CREATE DATABASE motomensajeria;
 >3. Open application and integrate Java SDK 11 if it asks you
 >4.	Synchronize Hibernate with your Database. Go to src/main/java/config/HibernateConfig
 ><br><br>dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");   --> Configure according to the drivers of your Database<br>
