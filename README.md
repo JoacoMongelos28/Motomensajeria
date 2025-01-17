@@ -8,7 +8,7 @@ Technologies:<br>
 •	Frontend: HTML5 | CSS3 | Javascript<br>
 •	Backend: Spring Boot | Java | Javascript | MySQL<br>
 •	API: Mercado Pago API | Google Maps API | Servlet API <br>
-•	Testing: Mockito | Spring Test Hamcrest | JUnit | Playwright<br><br>
+•	Testing: Mockito | Spring Test | Hamcrest | JUnit | Playwright<br><br>
 
 > [!NOTE]
 > Prerequisites:<br>
