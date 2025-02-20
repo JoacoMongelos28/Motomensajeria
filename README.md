@@ -6,7 +6,7 @@ Technologies:<br>
 •	Backend: Java<br>
 •	Testing: Mockito<br>
 •	Database: MySQL<br>
-•	ORM: Hibernate | JPA<br>
+•	ORMs: Hibernate | JPA<br>
 •	Frameworks: Spring Boot<br>
 • Template Engine: Thymeleaf<br>
 •	Frontend: HTML5 | CSS3 | Javascript<br>
