@@ -7,10 +7,10 @@ Technologies:<br>
 •	Testing: Mockito<br>
 •	Database: MySQL<br>
 •	ORMs: Hibernate | JPA<br>
-•	Frameworks: Spring Boot<br>
+•	Framework: Spring Boot<br>
 • Template Engine: Thymeleaf<br>
 •	Frontend: HTML5 | CSS3 | Javascript<br>
-•	API: Mercado Pago API | Google Maps API<br>
+•	APIs: Mercado Pago API | Google Maps API<br>
 • Management and Automation Tool: Maven<br><br>
 
 > [!NOTE]
