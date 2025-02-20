@@ -4,8 +4,8 @@ The Motomesajería project aims to develop an efficient and modern solution for 
 
 Technologies:<br>
 •	Backend: Java<br>
-•	Database: MySQL<br>
 •	Testing: Mockito<br>
+•	Database: MySQL<br>
 •	ORM: Hibernate | JPA<br>
 •	Frameworks: Spring Boot<br>
 • Template Engine: Thymeleaf<br>
