@@ -3,12 +3,15 @@
 The Motomesajería project aims to develop an efficient and modern solution for the fast messaging service. This system is designed to connect customers with drivers who use various means of transportation, such as motorcycles, cars and others, optimizing the management of orders, routes and delivery times. In an environment where speed and reliability are essential, Motomesajería seeks to be a key tool for individuals and companies that require urgent or scheduled shipments. The platform combines features such as real-time geolocation, integrated payments and a notification system, ensuring a seamless experience for all parties involved.<br><br>
 
 Technologies:<br>
-• Tools: Maven<br>
-•	Frameworks: Thymeleaf | Hibernate<br>
+•	Backend: Java<br>
+•	Database: MySQL<br>
+•	Testing: Mockito<br>
+•	ORM: Hibernate | JPA<br>
+•	Frameworks: Spring Boot<br>
+• Template Engine: Thymeleaf<br>
 •	Frontend: HTML5 | CSS3 | Javascript<br>
-•	Backend: Spring Boot | Java | Javascript | MySQL<br>
-•	API: Mercado Pago API | Google Maps API | Servlet API <br>
-•	Testing: Mockito | Spring Test | Hamcrest | JUnit | Playwright<br><br>
+•	API: Mercado Pago API | Google Maps API<br>
+• Management and Automation Tool: Maven<br><br>
 
 > [!NOTE]
 > Prerequisites:<br>
