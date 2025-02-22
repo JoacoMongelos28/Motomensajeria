@@ -4,14 +4,14 @@ The Motomesajería project aims to develop an efficient and modern solution for 
 
 Technologies:<br>
 •	Backend: Java<br>
-•	Testing: Mockito<br>
 •	Database: MySQL<br>
 •	ORMs: Hibernate | JPA<br>
 •	Framework: Spring Boot<br>
 • Template Engine: Thymeleaf<br>
+•	Testing: Mockito | Playwright<br>
 •	Frontend: HTML5 | CSS3 | Javascript<br>
-•	APIs: Mercado Pago API | Google Maps API<br>
-• Management and Automation Tool: Maven<br><br>
+• Management and Automation Tool: Maven<br>
+•	APIs: Mercado Pago API | Google Maps API<br><br>
 
 > [!NOTE]
 > Prerequisites:<br>
