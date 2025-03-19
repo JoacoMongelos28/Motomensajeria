@@ -40,7 +40,7 @@ The Motomesajería project aims to develop an efficient and modern solution for 
 > dataSource.setUsername("YOUR_USERNAME");
 > dataSource.setPassword("YOUR_PASSWORD");
 >```
-> ### 5.	Start the project with Jetty:Run:
+> ### 5.	Start the project with Jetty:Run.
 > **Go to the "m" of Maven in the right bar --> Open Spring Web MVC --> Plugins --> Jetty --> Jetty:Run**
 > ### 6. Open Web at:
 > **http://localhost:8080/home**
